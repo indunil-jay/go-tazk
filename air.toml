@@ -1,22 +1,22 @@
+# .air.toml
+
 root = "."
 tmp_dir = "tmp"
 
 [build]
-    cmd = "go build -o ./tmp/app ."
-
-    # file extensions to watch
-    include = ["**/*.go"]
-
-    # directories to ignore
-    exclude = ["tmp/*"]
-
-    # path to produced binary
-    bin = "main"
-
-    # specifies the files or directories to be ignored when triggering a build
-    ignore = [tmp/*]
+  cmd = "go build -o ./tmp/app ."
+  bin = "tmp/app"
+  full_bin = "tmp/app"
+  include = ["**/*.go"]
+  exclude = [
+    "tmp/*",
+    "node_modules/*",
+    "vendor/*",
+    ".git/*",
+    ".vscode/*"
+  ]
+  # debounce interval to prevent rebuild on every keystroke
+  delay = 500  # milliseconds (waits 0.5s after last change before rebuild)
 
 [log]
-    time = true
-
-
+  time = true
