@@ -1,0 +1,22 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+    cmd = "go build -o ./tmp/app ."
+
+    # file extensions to watch
+    include = ["**/*.go"]
+
+    # directories to ignore
+    exclude = ["tmp/*"]
+
+    # path to produced binary
+    bin = "main"
+
+    # specifies the files or directories to be ignored when triggering a build
+    ignore = [tmp/*]
+
+[log]
+    time = true
+
+
