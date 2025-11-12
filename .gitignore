@@ -7,7 +7,7 @@
 
 
 # Air live reload config
-.tmp/
+tmp/
 
 
 # Test binary, built with `go test -c`
